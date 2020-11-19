@@ -23,20 +23,20 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(HYCON_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(HYCON_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(HYCON_TARGET_PACKAGE).md5sum
-        @echo "done"
+	@echo "done"
 	@echo -e ${CL_CYN}"=========================-Package Complete-========================="${CL_RST}
-        @echo -e ${CL_MAG}" █████   █████ █████ █████   █████████     ███████    ██████   █████"${CL_MAG}
-        @echo -e ${CL_MAG}"░░███   ░░███ ░░███ ░░███   ███░░░░░███  ███░░░░███   ░██████ ░░███░"${CL_MAG}
-        @echo -e ${CL_MAG}" ░███    ░███  ░░███ ███   ███     ░░░  ███     ░░███ ░███░███ ░███░"${CL_MAG}
-        @echo -e ${CL_MAG}" ░███████████   ░░█████   ░███         ░███      ░███ ░███░░███░███░"${CL_MAG}
-        @echo -e ${CL_MAG}" ░███░░░░░███    ░░███    ░███         ░███      ░███ ░███ ░░██████░"${CL_MAG}
-        @echo -e ${CL_MAG}" ░███    ░███     ░███    ░░███     ███░░███     ███  ░███  ░░█████░"${CL_MAG}
-        @echo -e ${CL_MAG}" █████   █████    █████    ░░█████████  ░░░███████░   █████  ░░█████"${CL_MAG}
-        @echo -e ${CL_MAG}" ░░░░░   ░░░░░    ░░░░░      ░░░░░░░░░     ░░░░░░░    ░░░░░    ░░░░░"${CL_MAG}
+	@echo -e ${CL_MAG}" █████   █████ █████ █████   █████████     ███████    ██████   █████"${CL_MAG}
+	@echo -e ${CL_MAG}"░░███   ░░███ ░░███ ░░███   ███░░░░░███  ███░░░░███   ░██████ ░░███░"${CL_MAG}
+	@echo -e ${CL_MAG}" ░███    ░███  ░░███ ███   ███     ░░░  ███     ░░███ ░███░███ ░███░"${CL_MAG}
+	@echo -e ${CL_MAG}" ░███████████   ░░█████   ░███         ░███      ░███ ░███░░███░███░"${CL_MAG}
+	@echo -e ${CL_MAG}" ░███░░░░░███    ░░███    ░███         ░███      ░███ ░███ ░░██████░"${CL_MAG}
+	@echo -e ${CL_MAG}" ░███    ░███     ░███    ░░███     ███░░███     ███  ░███  ░░█████░"${CL_MAG}
+	@echo -e ${CL_MAG}" █████   █████    █████    ░░█████████  ░░░███████░   █████  ░░█████"${CL_MAG}
+	@echo -e ${CL_MAG}" ░░░░░   ░░░░░    ░░░░░      ░░░░░░░░░     ░░░░░░░    ░░░░░    ░░░░░"${CL_MAG}
 	@echo -e ${CL_RST}""${CL_RST}
 	@echo -e ${CL_RST}""${CL_RST}
 	@echo -e ${CL_RST}"                   Your Build Is Ready! Enjoy the HyconOS.          "${CL_RST}
-        @echo -e ${CL_CYN}"=============================-Package Details-============================"${CL_RST}
+	@echo -e ${CL_CYN}"=============================-Package Details-============================"${CL_RST}
 	@echo -e ${CL_CYN}"ZipName        : "${CL_MAG}" $(HYCON_TARGET_PACKAGE)"${CL_RST}
 	@echo -e ${CL_CYN}"MD5            : "${CL_MAG}" $(shell cat $(HYCON_TARGET_PACKAGE).md5sum | awk '{print $$1}')"${CL_RST}
 	@echo -e ${CL_CYN}"Size           : "${CL_MAG}" $(shell du -hs $(HYCON_TARGET_PACKAGE) | awk '{print $$1}')"${CL_RST}
